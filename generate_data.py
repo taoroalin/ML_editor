@@ -1,12 +1,9 @@
-import numpy as np
-import pandas as pd
-import torch
-import torch.nn as nn
-import torchtext
-import nltk
-from nltk.corpus import words
 import re
 import random
+import numpy as np
+import pandas as pd
+import nltk
+from nltk.corpus import words
 
 allwords = words.words()
 
@@ -41,7 +38,7 @@ def read(fname):
 def generate_save(fname, nname):
     sentences = read(fname)
     pairs = [combine(insert_generate(sentence)) for sentence in sentences]
-    df = pd.dataFrame(pairs, columns=None, headers=None)
+    df = pd.DataFrame(pairs, columns=["original", "noisy"])
     print(df.head())
     df.to_csv(nname)
 
