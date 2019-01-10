@@ -42,5 +42,5 @@ def generate_save(fname, nname):
     print(df.head())
     df.to_csv(nname)
 
-generate_save("./books/amanobsessed.txt", "./datasets/1.csv")
+generate_save("./data/books/amanobsessed.txt", "./datasets/1.csv")
 
