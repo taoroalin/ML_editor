@@ -37,7 +37,7 @@ def read(fname):
 
 def generate_save(fname, nname):
     sentences = read(fname)
-    pairs = [combine(insert_generate(sentence)) for sentence in sentences]
+    pairs = [combine(flip_generate(sentence)) for sentence in sentences]
     df = pd.DataFrame(pairs, columns=["original", "noisy"])
     print(df.head())
     df.to_csv(nname)
